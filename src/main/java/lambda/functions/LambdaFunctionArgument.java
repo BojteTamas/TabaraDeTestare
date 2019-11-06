@@ -1,5 +1,7 @@
+package lambda.functions;
+
 /**
- * Exemplu de lambda function in Java 8
+ * Exemplu de lambda function in Java 8 https://www.baeldung.com/java-8-streams
  */
 public class LambdaFunctionArgument {
     interface Circle {

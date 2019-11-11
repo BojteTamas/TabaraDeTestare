@@ -11,7 +11,7 @@ import static pageObjects.PLP.*;
 public class SearchingForProductsTest extends BaseTest {
 
     @Test
-    public void searchForAProductAndCheckTheNumbers() throws InterruptedException {
+    public void searchForAProductAndCheckTheNumbers() {
         String searchedProduct = "xmas";
         chromeDriver.findElement(PLP.searchInput).sendKeys(searchedProduct);
         chromeDriver.findElement(PLP.searchInput).submit();
@@ -44,7 +44,7 @@ public class SearchingForProductsTest extends BaseTest {
         /**
          * Calculeaza suma preturilor mai mare de 100 de lei
          */
-        System.out.println("Se afiseaza suma preturilor mai mare de 100");
+        System.out.println("Se afiseaza suma preturilor mai mare de 300");
         System.out.println(HelperMethodsSeleniumJava7.getSumOfNumbersBiggerThan(productPrices, 300));
         System.out.println(HelperMethodsSeleniumJava8.getSumOfNumbers(productPrices, price -> price > 300));
         //Suma tuturor numerelor

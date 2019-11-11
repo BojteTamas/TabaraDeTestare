@@ -33,24 +33,19 @@ public class HelperMethodsSeleniumJava8 extends BaseTest implements MultipleInhe
                 .collect(Collectors.toList());
     }
 
-    public static int getSumOfNumbers(By productPrices, IntPredicate predicate) {
+    public static Integer getSumOfNumbers(By productPrices, IntPredicate predicate) {
         List<WebElement> webElementList = chromeDriver.findElements(productPrices);
-        List<Integer> prices = webElementList.stream()
+        return webElementList.stream()
                 .mapToInt(MultipleInheritance::getInnerHTML)
+                .filter(predicate)
                 .boxed()
-                .collect(Collectors.toList());
-        return MultipleInheritance.add(prices, predicate);
+                .reduce(0, Integer::sum);
     }
 
     public static int getBigestPrice(By productPrices) {
         List<WebElement> webElementList = chromeDriver.findElements(productPrices);
-        List<Integer> prices = webElementList.stream()
+        return webElementList.stream()
                 .mapToInt(MultipleInheritance::getInnerHTML)
-                .boxed()
-                .collect(Collectors.toList());
-
-        return prices.stream()
-                .mapToInt(value -> value)
                 .max()
                 .getAsInt();
     }

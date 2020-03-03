@@ -5,21 +5,28 @@ import org.openqa.selenium.WebElement;
 import tests.BaseTest;
 
 public class WebElementFunctions {
-    interface WebElementString {
-        String get(WebElement webElement);
-    }
+  interface WebElementStringOperation {
+    String get(WebElement webElement);
+  }
 
-    public String webElementOperation(WebElement webElement, WebElementString webElementString) {
-        return webElementString.get(webElement);
-    }
+  private String webElementOperation(WebElement webElement, WebElementStringOperation webElementString) {
+    return webElementString.get(webElement);
+  }
 
-    /**
-     * Function Argument in Lambda Expression
-     */
-    WebElementString webElementLowercaseString = (r) -> r.getText().toLowerCase();
-    WebElementString webElementUppercaseString = (r) -> r.getText().toUpperCase();
+  /** Function Argument in Lambda Expression */
+  private WebElementStringOperation getWebElementLowercaseString = (r) -> r.getText().toLowerCase();
 
-    public String getWebElementLowercaseText(By byObject) {
-        return new WebElementFunctions().webElementOperation(BaseTest.chromeDriver.findElement(byObject), webElementLowercaseString);
-    }
+  private WebElementStringOperation getWebElementUppercaseString = (r) -> r.getText().toUpperCase();
+
+  public String getWebElementLowercaseText(By byObject) {
+    return new WebElementFunctions()
+        .webElementOperation(
+            BaseTest.chromeDriver.findElement(byObject), getWebElementLowercaseString);
+  }
+
+  public String getWebElementUpperCaseText(By byObject) {
+    return new WebElementFunctions()
+        .webElementOperation(
+            BaseTest.chromeDriver.findElement(byObject), getWebElementUppercaseString);
+  }
 }

@@ -3,9 +3,10 @@ package pageObjects;
 import org.openqa.selenium.By;
 
 public class PLP {
-    public final static By searchInput = By.cssSelector("#searchboxTrigger");
-    public final static By productsContainers = By.cssSelector("div[class='card-item js-product-data']");
-    public final static By productPrices = By.cssSelector("div[class='card-item js-product-data'] .product-new-price");
-    public final static By myAccountButton = By.cssSelector("#my_account span");
-
+  public static final By SEARCH_INPUT = By.cssSelector("#searchboxTrigger");
+  public static final By PRODUCTS_CONTAINERS =
+      By.cssSelector("div[class='card-item js-product-data']");
+  public static final By PRODUCT_PRICES =
+      By.cssSelector("div[class='card-item js-product-data'] .product-new-price");
+  public static final By MY_ACCOUNT_BUTTON = By.cssSelector("#my_account span");
 }

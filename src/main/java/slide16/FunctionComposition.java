@@ -1,4 +1,4 @@
-package lambda.functions;
+package slide16;
 
 import java.util.Arrays;
 import java.util.List;
@@ -17,13 +17,14 @@ public class FunctionComposition {
     System.out.println(result);
 
     // With Java 8
-    System.out.println(
+    int sum =
         numbers.stream()
-            .filter(integer -> integer % 2 == 0)
+            .filter(integer -> integer % 2 == 0) // da-mi
             //                        .map(integer -> integer * 2)
             .mapToInt(FunctionComposition::getIntegerToIntFunction)
             //                        .reduce(0, Integer::sum));
-            .sum());
+            .sum();
+    System.out.println(sum);
   }
 
   private static int getIntegerToIntFunction(int integer) {

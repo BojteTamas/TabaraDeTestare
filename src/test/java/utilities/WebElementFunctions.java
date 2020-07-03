@@ -9,14 +9,15 @@ public class WebElementFunctions {
     String get(WebElement webElement);
   }
 
-  private String webElementOperation(WebElement webElement, WebElementStringOperation webElementString) {
+  private String webElementOperation(
+      WebElement webElement, WebElementStringOperation webElementString) {
     return webElementString.get(webElement);
   }
 
   /** Function Argument in Lambda Expression */
-  private WebElementStringOperation getWebElementLowercaseString = (r) -> r.getText().toLowerCase();
+  private WebElementStringOperation getWebElementLowercaseString = r -> r.getText().toLowerCase();
 
-  private WebElementStringOperation getWebElementUppercaseString = (r) -> r.getText().toUpperCase();
+  private WebElementStringOperation getWebElementUppercaseString = r -> r.getText().toUpperCase();
 
   public String getWebElementLowercaseText(By byObject) {
     return new WebElementFunctions()

@@ -44,7 +44,7 @@ public class HelperMethodsSeleniumJava8 extends BaseTest implements MultipleInhe
         .mapToInt(MultipleInheritance::getInnerHTML)
         .filter(predicate)
         .boxed()
-        .reduce(0, Integer::sum);
+        .reduce(0, Integer::sum); // sau sum direct
   }
 
   public int getBiggestPrice(By productPrices) {

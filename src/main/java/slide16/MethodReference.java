@@ -1,4 +1,4 @@
-package lambda.functions;
+package slide16;
 
 import java.util.Arrays;
 import java.util.List;

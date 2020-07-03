@@ -1,6 +1,6 @@
-package static_and_default_methods.example2;
+package slide6.example2;
 
-public class Car implements Vehicle { // TODO Add Alarm Interface
+public class Car implements Vehicle { // TODO hint : try to implement two interfaces
   private String brand;
 
   Car(String brand) {

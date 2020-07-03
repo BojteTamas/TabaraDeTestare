@@ -1,4 +1,4 @@
-package static_and_default_methods.example2;
+package slide6.example2;
 
 public interface Alarm {
   /**

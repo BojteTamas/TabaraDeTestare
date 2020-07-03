@@ -1,4 +1,4 @@
-package lambda.functions;
+package slide16;
 
 import java.util.Arrays;
 import java.util.List;
@@ -12,13 +12,11 @@ public class NiceForLoops {
     int size = numbers.size();
     for (int i = 0; i < size; i++) {
       System.out.println(numbers.get(i));
-      ;
     }
 
     /** v2 */
     for (Integer number : numbers) {
       System.out.println(number);
-      ;
     }
 
     /** v3 single line of code */

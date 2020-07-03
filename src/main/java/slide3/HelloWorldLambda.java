@@ -1,4 +1,4 @@
-package lambda.functions;
+package slide3;
 
 public class HelloWorldLambda {
   interface HelloNewWorld {

@@ -1,4 +1,4 @@
-package static_and_default_methods.example1;
+package slide6.example1;
 
 interface Clickable {
   default void click() {

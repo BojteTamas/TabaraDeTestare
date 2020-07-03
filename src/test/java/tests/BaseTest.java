@@ -11,7 +11,7 @@ import org.testng.annotations.BeforeTest;
 
 @SpringBootTest(classes = {SpringConfig.class})
 public class BaseTest extends AbstractTestNGSpringContextTests {
-  private static String HTTPS_WWW_EMAG_RO = "https://www.emag.ro";
+  private static final String HTTPS_WWW_EMAG_RO = "https://www.emag.ro";
   public static ChromeDriver chromeDriver;
 
   @Autowired

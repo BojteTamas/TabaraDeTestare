@@ -1,4 +1,4 @@
-package static_and_default_methods.example2;
+package slide6.example2;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,6 +23,7 @@ public class TestClass {
     vehicleList.add(car2);
     vehicleList.add(car3);
 
+    /* mica introducere stream si lambda -> afisam numarul de masini care au brandul BMW */
     System.out.println(
         vehicleList.stream().filter(vehicle -> vehicle.getBrand().contentEquals("BMW")).count());
   }

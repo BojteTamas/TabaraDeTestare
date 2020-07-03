@@ -1,4 +1,4 @@
-package lambda.functions;
+package slide3;
 
 public class HelloWorld {
   public static void main(String[] args) {

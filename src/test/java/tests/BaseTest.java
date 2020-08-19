@@ -2,7 +2,10 @@ package tests;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import java.util.concurrent.TimeUnit;
+import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
@@ -33,5 +36,14 @@ public class BaseTest extends AbstractTestNGSpringContextTests {
 
   private static void setupTheWebDriver() {
     WebDriverManager.chromedriver().setup();
+  }
+
+  public static void colorTheElement(final Object object) {
+    if (object instanceof By) {
+      chromeDriver.executeScript(
+          "arguments[0].style.border='3px solid red'", chromeDriver.findElement((By) object));
+    } else {
+      chromeDriver.executeScript("arguments[0].style.border='3px solid red'", object);
+    }
   }
 }
